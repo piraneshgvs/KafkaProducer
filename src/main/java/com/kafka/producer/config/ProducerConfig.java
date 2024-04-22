@@ -15,16 +15,13 @@ public class ProducerConfig {
     private String key;
 
     @Autowired
-    public ProducerConfig(KafkaTemplate<String, EventData> kafkaTemplate){
+    public ProducerConfig(KafkaTemplate<String, EventData> kafkaTemplate) {
         this.kafkaTemplate = kafkaTemplate;
     }
 
-    public void sendMessage(EventData eventData){
+    public void sendMessage(EventData eventData) {
         kafkaTemplate.send(key, eventData);
     }
-
-
-
 
 
 }
